@@ -3,33 +3,27 @@ package multithreading;
 import java.util.concurrent.Semaphore;
 
 public class Book {
-  int count = 50;
   Semaphore semaphore = new Semaphore(50);
 
   public Book() {
   }
 
-  ;
-
-  public void borrowBook() {
-    synchronized (this) {
+  public void borrowBook(int stt,int userId) {
       try {
         semaphore.acquire();
       }
       catch (InterruptedException e) {
         e.printStackTrace();
       }
-      System.out.println("ban da thue sach thanh cong");
-    }
+      System.out.println("user " + userId + " da muon" +" sach " + stt);
+
     try {
-      Thread.sleep(2000);
+      Thread.sleep(10000);
     }
     catch (InterruptedException e) {
       e.printStackTrace();
     }
-    synchronized (this) {
-      count--;
-    }
+      semaphore.release();
   }
 
 }
