@@ -20,7 +20,7 @@ public class Run {
       catch (InterruptedException e) {
         e.printStackTrace();
       }
-      if (count>= 50) {
+      if (count >= 50) {
         System.out.println("het sach");
         break;
       }

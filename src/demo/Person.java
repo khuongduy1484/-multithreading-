@@ -5,6 +5,7 @@ import java.util.concurrent.Semaphore;
 public class Person extends Thread {
   public Book book = new Book();
   Semaphore semaphore = new Semaphore(50);
+
   @Override
   public void run() {
     try {
